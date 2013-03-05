@@ -1,0 +1,24 @@
+# LOADING IN THE DIFFRENT THINGS!
+
+# Load the configs
+for config_file ($HOME/.zsh/lib/*.zsh); do
+  source $config_file
+done
+
+autoload -U compinit promptinit
+autoload -U colors && colors
+compinit
+promptinit
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Resource files
+for file in $HOME/.zsh/rc/*.rc; do
+  source $file
+done
+
+for file in $HOME/.zsh/plugins/*; do
+  source $file/*.plugin.zsh
+done
+
+# Init keychain
+eval 'keychain --eval --quiet --agents ssh id_rsa'

@@ -1,0 +1,3 @@
+[submodule "fonts/bdf-tewi"]
+	path = fonts/bdf-tewi
+	url = https://github.com/neeee/bdf-tewi.git

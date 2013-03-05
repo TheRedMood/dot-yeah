@@ -1,0 +1,22 @@
+double_buffer yes
+cpu_avg_samples 2
+net_avg_samples 2
+use_xft yes 
+xftfont Cousine:size=9
+update_interval 1
+default_color orange
+format_human_readable yes
+background no
+out_to_console yes
+out_to_x no
+total_run_times 0
+use_spacer none
+
+
+#alignment top_right
+#use_spacer right
+#no_buffers yes
+#uppercase no
+
+TEXT
+$nodename ${color orange}Uptime:${color white} $uptime ${color #0077ff}| CPU:${color #0077ff} ${color white}${cpu}%${color #0077ff} | FS: ${color lightgrey}${fs_used /}/${fs_size /}${color #0077ff} | /home: ${color lightgrey}${fs_used /home}/${fs_size /home}${color #0077ff} | RAM: ${color white}$mem ${color #0077ff}| Network:${color white} ${addr eth0} ${color #0077ff}| Down: ${color white}${downspeed eth0} ${color #0077ff}| Up: ${color white}${upspeed eth0} ${color #0077ff}| Volume:${color white} ${exec amixer get Master | egrep -o "[0-9]+%" | head -1 | egrep -o "[0-9]*"}%

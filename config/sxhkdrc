@@ -1,0 +1,59 @@
+
+# Applications
+mod4 +  Return
+    urxvt
+mod4 + w
+    firefox
+super + space
+    dmenu_run
+
+# Closing stuff
+super + {w,shift + w}
+    bspc {close,kill}
+
+# Reload the config 
+super + Escape
+    pkill -USR1 -x  sxhkd
+
+# Movement keys
+mod4 + Right
+    bspc focus right
+mod4 + Left
+    bspc focus left
+mod4 + Up
+    bspc focus up
+mod4 + Down
+    bspc focus down
+
+# Across monitors
+mod4 + ctrl + Left
+    bspc cycle_monitor prev
+mod4 + ctrl + Right
+    bspc cycle_monitor next
+
+# Window managment?
+mod4 + {1-9,0}
+    bspc use {One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten}
+
+mod4 + shift + {1-9,0}
+    bspc send_to {One,Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten}
+
+mod4 + shift + {Right,Left,Up,Down}
+    bspc shift {right,left,up,down}
+# Mouse stuff
+
+super + button{1,2,3}
+    bspc grab_pointer {move,resize_side,resize_corner}
+
+super + !button{1,2,3}
+    bspc {track_pointer,track_pointer,track_pointer} %i %i
+
+super + @button{1,2,3}
+    bspc {ungrab_pointer,ungrab_pointer,ungrab_pointer}
+
+# JUST STUFF! FIGURE IT OUT LATER
+super + {s,f,x,z}
+    bspc toggle_{floating,fullscreen,locked,visibility}
+
+super + {r,shift + r,u}
+    bspc rotate {clockwise,counter_clockwise,full_cycle}

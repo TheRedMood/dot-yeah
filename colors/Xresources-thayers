@@ -1,0 +1,37 @@
+! terminal colours
+URxvt*foreground: #a0a0a0
+URxvt*background: #1b1d1e
+
+!molokai inspired colors
+
+!black
+URxvt*color0:    #1b1d1e
+URxvt*color8:    #505354
+
+!red
+URxvt*color1:    #f92672
+URxvt*color9:    #ff5995
+
+!green
+URxvt*color2:    #82b414
+URxvt*color10:   #b6e354
+
+!yellow
+URxvt*color3:    #fd971f
+URxvt*color11:   #feed6c
+
+!blue
+URxvt*color4:    #56c2d6
+URxvt*color12:   #8cedff
+
+!magenta
+Urxvt*color5:    #8c54fe
+Urxvt*color13:   #9e6ffe
+
+!cyan
+URxvt*color6:    #465457
+URxvt*color14:   #899ca1
+
+!white
+URxvt*color7:    #ccccc6
+Urxvt*color15:   #f8f8f2

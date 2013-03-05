@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#Xrandr stuff
+#xrandr --output DFP5 --auto --primary
+#xrandr --output CRT1 --auto --right-of DFP5
+
+# Doing the color stuff
+xrdb ~/.dot-yeah/colors/Xresources-tommytiger
+xrdb -merge ~/.Xresources
+
+nitrogen --restore &
+#mpd &
+#~/.dropbox-dist/dropboxd & 
+
+# fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+setxkbmap -layout no
+
+sxhkd & 
+#exec openbox-session
+#exec wmfs
+#exec spectrwm
+#exec stumpwm
+exec bspwm
