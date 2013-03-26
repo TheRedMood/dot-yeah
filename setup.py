@@ -50,6 +50,10 @@ xres  = Dotfile("Xresources", "{0}/config/Xresources".format(DOTDIR),  "{0}/.Xre
 zsh   = Dotfile("zsh"     , "{0}/zsh/zshrc".format(DOTDIR)   , "{0}/.zshrc".format(HOME)   )
 conky = Dotfile("conky"   , "{0}/config/conkyrc".format(DOTDIR) , "{0}/.conkyrc".format(HOME) )
 xinit = Dotfile("xinit"   , "{0}/config/xinitrc".format(DOTDIR) , "{0}/.xinitrc".format(HOME) )
+xbindkeys = Dotfile("xbindkeys"   , "{0}/config/xbindkeysrc".format(DOTDIR) , "{0}/.xbindkeysrc".format(HOME) )
+
+spectrwm = Dotfile("spectrwm", "{0}/spectrwm/spectrwm.conf".format(DOTDIR) , "{0}/.spectrwm.conf".format(HOME) )
+spectrwm_us = Dotfile("spectrwm_us", "{0}/spectrwm/spectrwm_us.conf".format(DOTDIR) , "{0}/.spectrwm_us.conf".format(HOME) )
 
 # We need to check directories to.
 scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
@@ -62,8 +66,6 @@ zshcolors = Dotfile("zshcolors", "{0}/zsh/colors".format(DOTDIR), "{0}/.zsh/colo
 zshplugins = Dotfile("zsh/plugins", "{0}/zsh/plugins".format(DOTDIR), "{0}/.zsh/plugins".format(HOME), True, "{0}/.zsh".format(HOME))
 zshlib = Dotfile("zsh/lib", "{0}/zsh/lib".format(DOTDIR), "{0}/.zsh/lib".format(HOME), True, "{0}/.zsh".format(HOME))
 zshrc = Dotfile("zsh/rc", "{0}/zsh/rc".format(DOTDIR), "{0}/.zsh/rc".format(HOME), True, "{0}/.zsh".format(HOME))
-sxhkd = Dotfile("sxhkd", "{0}/config/sxhkdrc".format(DOTDIR),  "{0}/.config/sxhkd/sxhkdrc".format(HOME), False, "{0}/.config/sxhkd".format(HOME))
-bspwm = Dotfile("bspwm", "{0}/config/bspwm-start".format(DOTDIR),  "{0}/.config/bspwm/autostart".format(HOME), False, "{0}/.config/bspwm".format(HOME))
 
 # We need to use all the elements up there
 for dotfile in dotfiles:

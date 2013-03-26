@@ -19,6 +19,3 @@ done
 for file in $HOME/.zsh/plugins/*; do
   source $file/*.plugin.zsh
 done
-
-# Init keychain
-eval 'keychain --eval --quiet --agents ssh id_rsa'

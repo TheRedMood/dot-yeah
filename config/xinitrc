@@ -5,8 +5,8 @@
 #xrandr --output CRT1 --auto --right-of DFP5
 
 # Doing the color stuff
-xrdb ~/.dot-yeah/colors/Xresources-tommytiger
-xrdb -merge ~/.Xresources
+xrdb ~/.Xresources
+xrdb -override ~/.dot-yeah/colors/Xresources-tommytiger
 
 nitrogen --restore &
 #mpd &
@@ -18,9 +18,6 @@ xset fp rehash
 
 setxkbmap -layout no
 
-sxhkd & 
-#exec openbox-session
-#exec wmfs
-#exec spectrwm
-#exec stumpwm
-exec bspwm
+xbindkeys
+#sxhkd & 
+exec spectrwm
