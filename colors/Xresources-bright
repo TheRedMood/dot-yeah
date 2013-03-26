@@ -1,0 +1,46 @@
+urxvt.cursorBlink:       false
+urxvt.cursorColor:       #E28623
+urxvt.cursorColor2:      #DCA910
+!urxvt.background:        #262626
+!urxvt.foreground:        #686868
+urxvt.colorBD:           #ffffff
+urxvt.colorIT:           #bbbbbb
+urxvt.colorUL:           #999999
+urxvt.underlineColor:    #999999
+urxvt.borderless:        true
+
+*background:        #211C13
+*foreground:        #FFF1AD
+
+! Tommy tiger colors, extended off mikado colors
+!black
+*color0:    #322a2c
+*color8:    #46423b
+
+!red
+*color1:    #BB4132
+*color9:    #A31E1F
+
+!green
+*color2:    #9b9329
+*color10:   #b4aa30
+
+!yellow
+*color3:    #FCCF00
+*color11:   #F29E00
+
+!blue
+*color4:    #6EAFB5
+*color12:   #689FB3
+
+!magenta
+*color5:    #856774
+*color13:   #9c818e
+
+!cyan
+*color6:    #757978
+*color14:   #9fa590
+
+!white
+*color7:    #bcbcaf
+*color15:   #c1c4bc

@@ -1,0 +1,47 @@
+URxvt*font:                -stlarch-terminusmod-medium-r-normal-*-12-120-72-72-c-60-iso8859-1
+URxvt*boldFont:            -stlarch-terminusmod-medium-r-normal-*-12-120-72-72-c-60-iso8859-1
+
+URxvt*background:           #2B2B2B
+URxvt*foreground:           #A1A1A1
+
+URxvt*highlightColor:       #999999
+URxvt*highlightTextColor:   #FFFFFF
+URxvt*cursorColor:          #999999
+URxvt*colorBD:              #FFFFFF
+URxvt*colorUL:              #FFFFCC
+URxvt*underlineColor:       #6666CC
+URxvt*internalBorder:       3
+
+URxvt*intensityStyles:      true
+
+!BLACK
+URxvt*color0:               #4b4b4b
+URxvt*color8:               #656565
+
+!RED
+URxvt*color1:               #d6729b
+URxvt*color9:               #ffa6c8
+
+!GREEN
+URxvt*color2:               #98d16f
+URxvt*color10:              #c6fca4
+
+!YELLOW
+URxvt*color3:               #d6ac72
+URxvt*color11:              #ffdda6
+
+!BLUE
+URxvt*color4:               #729bd6
+URxvt*color12:              #a6c8ff
+
+!MAGENTA
+URxvt*color5:               #ac72d6
+URxvt*color13:              #dba4fc
+
+!CYAN
+URxvt*color6:               #6fd1a8
+URxvt*color14:              #a6ffdd
+
+!WHITE
+URxvt*color7:               #d1d1d1
+URxvt*color15:              #ffffff
