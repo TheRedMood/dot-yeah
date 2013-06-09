@@ -7,9 +7,6 @@ export PATH
 # Editorz!
 export EDITOR="vim"
 
-# Settting the terminal
-export TERM=rxvt-unicode
-
 # no bleeps
 setopt NOBEEP 
 

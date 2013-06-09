@@ -16,8 +16,11 @@ nitrogen --restore &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
-setxkbmap -layout no
+setxkbmap -option ctrl:nocaps -layout no
 
-xbindkeys
+#xbindkeys
 #sxhkd & 
-exec spectrwm
+#exec spectrwm
+#exec openbox-session
+#exec i3
+#exec dwm
