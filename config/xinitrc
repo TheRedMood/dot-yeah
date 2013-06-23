@@ -21,6 +21,7 @@ setxkbmap -option ctrl:nocaps -layout no
 #xbindkeys
 #sxhkd & 
 #exec spectrwm
-#exec openbox-session
+exec openbox-session
 #exec i3
 #exec dwm
+#exec wmfs

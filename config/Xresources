@@ -49,14 +49,14 @@ urxvt.jumpScroll:        true
 urxvt.tintColor:         white
 urxvt.internalBorder:    0
 
-!urxvt.font:              xft:terminus:size=8
-!urxvt.boldFont:          xft:terminus:size=8
+urxvt.font:              xft:terminus:size=7
+urxvt.boldFont:          xft:terminus:size=7
 
 !urxvt.font:              xft:Inconsolata:style=Medium:size=10
 !urxvt.boldFont:          xft:Inconsolata:style=Medium:size=10
 
-urxvt.font:              xft:Droid Sans Mono Slashed:style=Regular:size=10
-urxvt.boldFont:          xft:Droid Sans Mono Slashed:style=Regular:size=10
+!urxvt.font:              xft:Droid Sans Mono Slashed:style=Regular:size=10
+!urxvt.boldFont:          xft:Droid Sans Mono Slashed:style=Regular:size=10
 
 URxvt.colorUL: #4682B4
 

@@ -1,7 +1,7 @@
 # = VARIABLES =
-PERENV=$HOME/orica
+PERENV=$HOME/root
 PENV_PATH=$PERENV/bin:$PERENV/usr/bin:$PERENV/usr/local/bin
-PATH=/usr/local/bin/:$PENV_PATH:$PATH:$HOME/scripts:$HOME/bin
+PATH=/usr/local/bin:$PENV_PATH:$HOME/scripts:$HOME/bin:$PATH
 export PATH
 
 # Editorz!
@@ -18,4 +18,6 @@ setopt share_history        # Logging across shells
 setopt inc_append_history   # Logging across shells
 
 export BSPWM_SOCKET='/tmp/bspwm-socket'
+export NNTPSERVER=news.gmane.org
+export WINEDLLOVERRIDES='winemenubuilder.exe=d'
 # vim: set ft=zsh:
