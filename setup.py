@@ -48,6 +48,7 @@ def warn():
 xres  = Dotfile("Xresources", "{0}/config/Xresources".format(DOTDIR),  "{0}/.Xresources".format(HOME))
 
 zsh   = Dotfile("zsh"     , "{0}/zsh/zshrc".format(DOTDIR)   , "{0}/.zshrc".format(HOME)   )
+zprofile  = Dotfile("zprofile" , "{0}/zsh/zprofile".format(DOTDIR)   , "{0}/.zprofile".format(HOME)   )
 conky = Dotfile("conky"   , "{0}/config/conkyrc".format(DOTDIR) , "{0}/.conkyrc".format(HOME) )
 xinit = Dotfile("xinit"   , "{0}/config/xinitrc".format(DOTDIR) , "{0}/.xinitrc".format(HOME) )
 xbindkeys = Dotfile("xbindkeys"   , "{0}/config/xbindkeysrc".format(DOTDIR) , "{0}/.xbindkeysrc".format(HOME) )

@@ -18,10 +18,16 @@ xset fp rehash
 
 setxkbmap -option ctrl:nocaps -layout no
 
+# firefox
+${HOME}/.dot-yeah/scripts/pack_ffox.sh
+
+# My beloved urxvtd
+urxvtd --quite --opendisplay --fork
+
 #xbindkeys
 #sxhkd & 
 #exec spectrwm
-exec openbox-session
+#exec openbox-session
 #exec i3
-#exec dwm
+exec dwm
 #exec wmfs
