@@ -19,3 +19,9 @@ done
 for file in $ZDOTDIR/.zsh/plugins/*; do
   source $file/*.plugin.zsh
 done
+
+# Aliases {{{
+    # General aliases {{{
+        alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi"
+    # }}}
+# }}}

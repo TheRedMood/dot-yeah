@@ -1,2 +1,2 @@
 /usr/bin/keychain ~/.ssh/id_dsa
-source ~/.keychain/ghostery-sh > /dev/null
+source ~/.keychain/$(hostname)-sh > /dev/null

@@ -54,9 +54,6 @@ xinit = Dotfile("xinit"   , "{0}/config/xinitrc".format(DOTDIR) , "{0}/.xinitrc"
 xbindkeys = Dotfile("xbindkeys"   , "{0}/config/xbindkeysrc".format(DOTDIR) , "{0}/.xbindkeysrc".format(HOME) )
 tmux = Dotfile("tmux"   , "{0}/config/tmux.conf".format(DOTDIR) , "{0}/.tmux.conf".format(HOME) )
 
-spectrwm = Dotfile("spectrwm", "{0}/spectrwm/spectrwm.conf".format(DOTDIR) , "{0}/.spectrwm.conf".format(HOME) )
-spectrwm_us = Dotfile("spectrwm_us", "{0}/spectrwm/spectrwm_us.conf".format(DOTDIR) , "{0}/.spectrwm_us.conf".format(HOME) )
-
 # We need to check directories to.
 scripts = Dotfile("scripts", "{0}/scripts".format(DOTDIR), "{0}/scripts".format(HOME), True)
 fonts   = Dotfile("fonts", "{0}/fonts".format(DOTDIR), "{0}/.fonts".format(HOME), True)

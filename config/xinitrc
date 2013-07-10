@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Xrandr stuff
-#xrandr --output DFP5 --auto --primary
-#xrandr --output CRT1 --auto --right-of DFP5
+xrandr --output HDMI-0 --auto --primary
+xrandr --output DVI-1 --auto --right-of HDMI-0
 
 # Doing the color stuff
 xrdb ~/.Xresources
@@ -19,10 +19,10 @@ xset fp rehash
 setxkbmap -option ctrl:nocaps -layout no
 
 # firefox
-${HOME}/.dot-yeah/scripts/pack_ffox.sh
+#${HOME}/.dot-yeah/scripts/pack_ffox.sh
 
 # My beloved urxvtd
-urxvtd --quite --opendisplay --fork
+#urxvtd --quite --opendisplay --fork
 
 #xbindkeys
 #sxhkd & 
