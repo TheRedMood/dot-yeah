@@ -1,2 +1,2 @@
-/usr/bin/keychain ~/.ssh/id_dsa
+/usr/bin/keychain --clear ~/.ssh/id_dsa
 source ~/.keychain/$(hostname)-sh > /dev/null

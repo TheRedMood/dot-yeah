@@ -1,27 +1,222 @@
-# LOADING IN THE DIFFRENT THINGS!
+# Created by Teodor Spæren (TheRedMood) <teodor_spaeren@riseup.net>
 
-export ZDOTDIR="$HOME"
+# Environment variables -v-
+	export ZDOTDIR="$HOME"
+	# Command history -v-
+		export HISTFILE=~/.zshhist
+		export HISTSIZE=10000
+		export SAVEHIST=$HISTSIZE
+	# -^-
+	# Applications -v-
+		export PAGER=vimpager
+		export MANPAGER=vimpager
+		export EDITOR=vim
+		export VISUAL=vim
+		export BROWSER=dwb
+	# -^-
+	# Paths -v-
+		export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.dot-yeah/scripts:$PATH"
+	# -^-
+	# Git prompt -v-
+		# git theming default: Variables for theming the git info prompt
+		ZSH_THEME_GIT_PROMPT_PREFIX="|%F{yellow}%B" # Prefix at the very beginning of the prompt, before the branch name
+		ZSH_THEME_GIT_PROMPT_SUFFIX="%b%f"             # At the very end of the prompt
+		ZSH_THEME_GIT_PROMPT_DIRTY="*"					# Text to display if the branch is dirty
+		ZSH_THEME_GIT_PROMPT_CLEAN=""					# Text to display if the branch is clean	
+	# -^-
+# -^-
+# Load plugins -v-
+	source ~/.zsh/git.zsh  # For prompt.
+	source ~/.zsh/keys.zsh # For keys.
+# -^-
+# Zsh options -v-
+	# Typeset options
+	typeset -g -A key                    # Make the associative array key global.
+	typeset -U path cdpath fpath manpath # Remove duplicates in the following arrays.
 
-# Load the first config files.
-for config_file ($ZDOTDIR/.zsh/lib/*.zsh); do
-  source $config_file
-done
+	# Changing directories
+	setopt auto_cd                       # Change directory without having to write cd.
 
-autoload -U promptinit && promptinit
-autoload -U colors && colors
+	# Completion
+	setopt always_to_end                 # Move the cursor to the end of the completion.
+	setopt auto_remove_slash             # Strip trailing slashes of completions.
+	setopt complete_in_word              # Complete even if the cursor in not at the end.
+	setopt list_packed                   # More compact completion lists.
+	setopt list_types                    # Show types in completion.
+	unsetopt rec_exact                   # Recognize exact, ambiguous matches.
 
-# Resource files
-for file in $ZDOTDIR/.zsh/rc/*.rc; do
-  source $file
-done
+	# Expansion and Globbing
+	setopt extended_glob                 # Use regex in filename generation.
+	setopt nomatch                       # If there is no match, print an error.
 
-# Plugins
-for file in $ZDOTDIR/.zsh/plugins/*; do
-  source $file/*.plugin.zsh
-done
+	# History
+	setopt append_history                # Append to history, not overwrite. This way multiple sessions have the same history.
+	setopt extended_history              # Save additional metadata to history file.
+	setopt hist_ignore_all_dups          # I no like dupes D:<
+	setopt hist_ignore_space             # Don't add commands prepended by whitespace to history.
+	setopt hist_reduce_blanks            # Remove superfluous blanks when adding command to history.
+	setopt hist_verify                   # When using ! cmds, confirm first.
+	setopt inc_append_history            # Append commands to history immediately.
 
-# Aliases {{{
-    # General aliases {{{
-        alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi"
-    # }}}
-# }}}
+	# Input/Output
+	setopt correct                       # Command correction.
+	setopt dvorak                        # Correct dvorak typing mistakes.
+	unsetopt flow_control                # Disable flow control since I am a new kid.
+	setopt short_loops                   # Allow for short forms of for, repeat, select, if and function constructs.
+
+	# Job Control
+	setopt notify                        # Report the status on background jobs immediately.
+
+	# Prompting
+	setopt prompt_subst                  # Command substitution and arithmetic expansion.
+
+	# Zle (Zsh line editor)
+	unsetopt beep                        # Disable beep.
+# -^-
+# Keybindings -v-
+	bindkey -v # I want vi mode to be enabled for Zle.
+# -^-
+# Aliases -v-
+	# Vimpager aliases -v-
+		alias less=$PAGER
+	# -^-
+	# General aliases -v-
+		alias sudo="sudo -E"
+		alias -- +="sudo"
+		alias sus="+ -s"
+
+		alias l="ls -ABFhovX --color=auto --group-directories-first --time-style=long-iso"
+		alias ls="ls --color=auto"
+		alias lsa="l"
+
+		alias grep="grep --color=auto"
+		alias sshfs="sshfs -o reconnect,nosuid,nodev,allow_other,uid=1000,gid=100"
+		alias df="df -h"
+		alias du="du -h"
+
+		alias mv="nocorrect mv -iv"
+		alias cp="nocorrect cp -iv"
+		alias mkdir="nocorrect mkdir -vp"
+
+		alias chmod="chmod -v"
+		alias chown="chown -v"
+		
+		# Git once
+		alias g='git'
+		alias gst='git status'
+		alias ga='git add'
+		alias gr='git rm'	
+		alias gl='git log'
+		alias gc='git commit'
+
+		# Fancy ones <3
+		alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+		alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi"
+		alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" --restrict-filenames'
+		alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+	# -^-
+	# Default sudo commands -v-
+		for cmd in mount ifconfig chmod chown rc.d apt-get emerge rc-update; do
+			alias $cmd="+ $cmd"
+		done
+	# -^-
+# -^-
+# Completion -v-
+	# For now this is all stolen :c
+	fpath=(~/.zsh/completion $fpath) 
+	autoload -Uz compinit && compinit
+	# SSH hosts completion -v-
+		[ -f ~/.ssh/config ] && : ${(A)ssh_config_hosts:=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}
+		[ -f ~/.ssh/known_hosts ] && : ${(A)ssh_known_hosts:=${${${(f)"$(<$HOME/.ssh/known_hosts)"}%%\ *}%%,*}}
+		zstyle ':completion:*:*:*' hosts $ssh_config_hosts $ssh_known_hosts
+	# -^-
+	# General rules -v-
+		zstyle ':completion:*' completer _complete _ignored
+		zstyle ':completion:*' expand prefix suffix
+		zstyle ':completion:*' group-name ''
+		zstyle ':completion:*' ignore-parents parent pwd .. directory
+		zstyle ':completion:*' insert-unambiguous true
+		zstyle ':completion:*' matcher-list ''
+		zstyle ':completion:*' menu select=long
+		zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+		zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+		zstyle ':completion:*' squeeze-slashes true
+		zstyle ':completion::complete:*' use-cache 1
+		zstyle ':completion::complete:*' cache-path ~/.zshcache
+		zstyle ':completion:*:*:kill:*' menu yes select
+		zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+		zstyle ':completion:*:*:killall:*:processes' command 'ps --forest -A -o pid,user,cmd'
+		zstyle ':completion:*:processes-names' command 'ps axho command'
+		zstyle ':completion:*:processes' command 'ps -au$USER -o pid,time,cmd|grep -v "ps -au$USER -o pid,time,cmd"'
+		zstyle ':completion:*:cd:*' ignored-patterns '(*/)#lost+found'
+		zstyle ':completion:*:matches' group yes
+		zstyle ':completion:*:options' description yes
+		zstyle ':completion:*:options' auto-description '%d'
+		zstyle ':completion:*:descriptions' format $'\e[01;33m-- %d --\e[0m'
+		zstyle ':completion:*:messages' format $'\e[01;35m-- %d --\e[0m'
+		zstyle ':completion:*:warnings' format $'\e[01;31m-- no matches found --\e[0m'
+		zstyle ':completion:*:manuals' separate-sections true
+		zstyle ':completion:*:manuals.*' insert-sections true
+		zstyle ':completion:*:man:*' menu yes select
+		zstyle ':completion:*:rm:*' ignore-line yes
+		zstyle ':completion:*:cp:*' ignore-line yes
+		zstyle ':completion:*:mv:*' ignore-line yes
+	# -^-
+	# Generic GNU completion for apps that understand long options -v-
+		compdef _gnu_generic slrnpull make df du mv cp makepkg
+	# -^-
+# -^-
+# Root settings -v-
+	if [[ $UID == 0 ]]; then
+		# Close root shell after 180 seconds
+		export TMOUT=180
+	fi
+# -^-
+# Prompt -v-
+	# Shell prompt -v-
+		autoload -U colors && colors                                  # Enable colours
+
+		if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi # Are we root or not?
+
+		PROMPT=''                                                     # Reset the prompt.
+
+		PROMPT+="[%F{$NCOLOR}%n%f@%F{blue}%B%M%b%f]"                                   # User name in appropriate colour.
+		PROMPT+="[%F{$NCOLOR}%~%f"                                   # Path in appropriate colour.
+		PROMPT+='$(git_prompt_info)]'                                  # Git info
+		PROMPT+="[%F{$NCOLOR}%y%f]"
+		PROMPT+=" %# "                                                # End of prompt. # = root, % = other.
+
+
+		RPROMPT=''                                                    # Reset the right prompt
+
+		RPROMPT+="%(0?.%F{green}:%)%f.%F{red}%? :(%f)"                # Sad or happy smiley face with appropriate colour based on $?.
+	# -^-
+	# List prompt - don't ask 'do you want to see all ...' in menu selection -v-
+		LISTPROMPT=''
+	# -^-
+	# Spelling prompt -v-
+		SPROMPT='zsh: correct '%R' to '%r'? ([Y]es/[N]o/[E]dit/[A]bort) '
+	# -^-
+# -^-
+# ZLE stuff -v-
+	# Smart dot (e.g. enter ...../dir) -v-
+		smartdot(){
+			if [[ $LBUFFER = *.. ]]; then
+				LBUFFER+=/
+			else
+				LBUFFER+=.
+			fi
+		}
+		zle -N smartdot smartdot
+		bindkey . smartdot
+	# -^-
+# -^-
+# Enable stderred -v-
+	if [[ -f "/usr/lib/stderred.so" ]]; then
+		export LD_PRELOAD="/usr/lib/stderred.so:$LD_PRELOAD"
+	fi
+# -^-
+# Disable flowcontrol -v-
+	stty -ixon
+# -^-
+# vim: set fmr=-v-,-^- fdm=marker cms=#%s# noet ts=4 sw=4 sts=4 :

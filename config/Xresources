@@ -4,59 +4,22 @@ Xft.hinting:              full
 Xft.hintstyle:           hintslight
 Xft.rgba:                  rgb
 
-xterm*title:             xterm
-xterm*faceName:          terminus:pixelsize=7
-!xterm*faceName:          cure:Regular
-!xterm*boldfaceName:      cure:Regular
-!xterm*faceName:          Pragmata
-!xterm*faceSize:          8.7
-!xterm*boldfaceName:      Pragmata
-xterm*geometry:          100x30
-!xterm*boldMode:          false
-xterm*cutNewline:        false
-xterm*on4Clicks:         group
-xterm*on5Clicks:         page
-xterm*internalBorder:    1
-xterm*background:        #262729
-xterm*foreground:        light grey
-xterm*metaSendsEscape:   true
-xterm*colorBD:           #ffffff
-xterm*colorBDMode:       false
-xterm*cursorBlink:       false
-xterm*cursorColor:       #e2baf1
-!xterm*veryBoldColors:    14
-xterm*dynamiccolors: true
-xterm*utf8: 1
-xterm*loginShell:        true
-xterm*charClass:         33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48,58:48,63:48,61:48,44:48,38:48,59:48
-xterm*jumpScroll:        true
-xterm*multiScroll:       true
-xterm*saveLines:         512
-
-urxvt.termName:          xterm
+!urxvt.termName:          rxvt-unicode-256color
 urxvt.scrollBar:         false
-!urxvt.backgroundPixmap:  /home/vermaden/.themes/urxvt.back.xpm
 urxvt.imLocale:          en_US.UTF-8
-!urxvt.imLocale:          ja_JP.UTF-8
-urxvt.loginShell:        true
 urxvt.saveLines:         512
 !urxvt.geometry:          100x30
-urxvt.boldMode:          false
+!urxvt.boldMode:          false
 urxvt.inheritPixmap:     false
-urxvt.shading:           40
-urxvt.xftAntialias:      false
+!urxvt.shading:           40
+!urxvt.xftAntialias:      false
 urxvt.jumpScroll:        true
-urxvt.tintColor:         white
+!urxvt.tintColor:         white
 urxvt.internalBorder:    0
 
-urxvt.font:              xft:terminus:size=7
-urxvt.boldFont:          xft:terminus:size=7
+urxvt.font:              xft:terminus:size=10
+urxvt.boldFont:          xft:terminus:size=10
 
-!urxvt.font:              xft:Inconsolata:style=Medium:size=10
-!urxvt.boldFont:          xft:Inconsolata:style=Medium:size=10
-
-!urxvt.font:              xft:Droid Sans Mono Slashed:style=Regular:size=10
-!urxvt.boldFont:          xft:Droid Sans Mono Slashed:style=Regular:size=10
 
 URxvt.colorUL: #4682B4
 

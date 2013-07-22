@@ -1,8 +1,4 @@
-# An array to note missing features to ease diagnosis in case of problems.
-typeset -ga debian_missing_features
-
-if [[ -z "$DEBIAN_PREVENT_KEYBOARD_CHANGES" ]] &&
-   [[ "$TERM" != 'emacs' ]]
+if [[ "$TERM" != 'emacs' ]]
 then
 
     typeset -A key
@@ -65,11 +61,6 @@ then
         }
         zle -N zle-line-init
         zle -N zle-line-finish
-    else
-        for i in {s,r}mkx; do
-            (( ${+terminfo[$i]} )) || debian_missing_features+=($i)
-        done
-        unset i
     fi
 
     unfunction bind2maps

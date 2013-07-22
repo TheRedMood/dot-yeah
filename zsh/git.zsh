@@ -1,3 +1,6 @@
+# Setup the prompt with pretty colors
+setopt prompt_subst
+
 # get the name of the branch we are on
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || \
@@ -128,5 +131,6 @@ function git_compare_version() {
 POST_1_7_2_GIT=$(git_compare_version "1.7.2")
 #clean up the namespace slightly by removing the checker function
 unset -f git_compare_version
+
 
 

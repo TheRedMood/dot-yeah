@@ -1,8 +1,0 @@
-# = PROMPT =
-# Changing the color if we are root
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="yellow"; fi
-
-PROMPT="[%{$fg[green]%}%n%{$reset_color%}][%{$fg[green]%}%~%{$reset_color%}][%{$fg[green]%}%T%{$reset_color%}] >>> "
-RPROMPT='%{$fg[$NCOLOR]%}%p $(git_prompt_info)%{$reset_color%}'
-
-# vim: set ft=zsh:

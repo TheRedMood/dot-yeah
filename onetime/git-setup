@@ -1,0 +1,10 @@
+#!/bin/bash
+# User setup -v-1
+git config --global user.name 'TheRedMood'
+git config --global user.email 'teodor_spaeren@riseup.net'
+# -^-
+# Aliases -v-1
+git config --global alias.co "checkout"
+git config --global alias.lol "log --pretty=oneline --abbrev-commit --graph --decorate --color"
+# -^-1
+# vim: set fmr=-v-,-^- fdm=marker cms=#%s# et ts=4 sw=4 sts=4 :
