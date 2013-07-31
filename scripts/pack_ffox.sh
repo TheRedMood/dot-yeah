@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Change this to match your correct profile
 PROFILE="t4623woq.default"

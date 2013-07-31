@@ -1,9 +1,4 @@
-#!/bin/bash
-
-#Xrandr stuff
-xrandr --output HDMI-0 --auto --primary
-xrandr --output DVI-1 --auto --right-of HDMI-0
-
+#!/usr/bin/env bash
 # Doing the color stuff
 xrdb ~/.Xresources
 xrdb -override ~/.dot-yeah/colors/Xresources-bright
@@ -18,16 +13,15 @@ xset fp rehash
 
 setxkbmap -option ctrl:nocaps -layout no
 
-# firefox
-#${HOME}/.dot-yeah/scripts/pack_ffox.sh
-
 # My beloved urxvtd
-#urxvtd --quite --opendisplay --fork
+urxvtd --quite --opendisplay --fork
 
 #xbindkeys
 #sxhkd & 
 #exec spectrwm
 #exec openbox-session
 #exec i3
-exec dwm
+#exec dwm
 #exec wmfs
+#exec monsterwm
+exec xmonad

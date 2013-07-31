@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # User setup -v-1
 git config --global user.name 'TheRedMood'
 git config --global user.email 'teodor_spaeren@riseup.net'

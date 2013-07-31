@@ -3,9 +3,27 @@
 # Environment variables -v-
 	export ZDOTDIR="$HOME"
 	# Command history -v-
-		export HISTFILE=~/.zshhist
+		export HISTFILE=~/.zhist_$USER
 		export HISTSIZE=10000
 		export SAVEHIST=$HISTSIZE
+	# -^-
+	# Locale -v-
+		export LANG="en_US.UTF-8"
+		export LC_CTYPE="en_US.UTF-8"
+		export LC_NUMERIC="en_US.UTF-8"
+		export LC_TIME="en_US.UTF-8"
+		export LC_COLLATE="en_US.UTF-8"
+		export LC_MONETARY="en_US.UTF-8"
+		export LC_MESSAGES="en_US.UTF-8"
+		export LC_PAPER="en_US.UTF-8"
+		export LC_NAME="en_US.UTF-8"
+		export LC_ADDRESS="en_US.UTF-8"
+		export LC_TELEPHONE="en_US.UTF-8"
+		export LC_MEASUREMENT="en_US.UTF-8"
+		export LC_IDENTIFICATION="en_US.UTF-8"
+		export LC_ALL=""
+
+		export LESSCHARSET="utf-8"
 	# -^-
 	# Applications -v-
 		export PAGER=vimpager
@@ -14,7 +32,13 @@
 		export VISUAL=vim
 		export BROWSER=dwb
 	# -^-
+	# Build settings -v-
+		export AUTOCONF_VERSION=2.59
+		export AUTOMAKE_VERSION=1.9
+	# -^-
 	# Paths -v-
+		# Perl
+		eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 		export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.dot-yeah/scripts:$PATH"
 	# -^-
 	# Git prompt -v-
@@ -43,7 +67,7 @@
 	setopt complete_in_word              # Complete even if the cursor in not at the end.
 	setopt list_packed                   # More compact completion lists.
 	setopt list_types                    # Show types in completion.
-	unsetopt rec_exact                   # Recognize exact, ambiguous matches.
+	setopt rec_exact                     # Recognize exact, ambiguous matches.
 
 	# Expansion and Globbing
 	setopt extended_glob                 # Use regex in filename generation.
@@ -51,7 +75,7 @@
 
 	# History
 	setopt append_history                # Append to history, not overwrite. This way multiple sessions have the same history.
-	setopt extended_history              # Save additional metadata to history file.
+#   setopt extended_history              # Save additional metadata to history file.
 	setopt hist_ignore_all_dups          # I no like dupes D:<
 	setopt hist_ignore_space             # Don't add commands prepended by whitespace to history.
 	setopt hist_reduce_blanks            # Remove superfluous blanks when adding command to history.
@@ -84,22 +108,16 @@
 		alias sudo="sudo -E"
 		alias -- +="sudo"
 		alias sus="+ -s"
-
-		alias l="ls -ABFhovX --color=auto --group-directories-first --time-style=long-iso"
-		alias ls="ls --color=auto"
-		alias lsa="l"
-
-		alias grep="grep --color=auto"
+		
+		alias ls="colorls -G"
+		alias grep="grep"
 		alias sshfs="sshfs -o reconnect,nosuid,nodev,allow_other,uid=1000,gid=100"
 		alias df="df -h"
 		alias du="du -h"
 
-		alias mv="nocorrect mv -iv"
-		alias cp="nocorrect cp -iv"
-		alias mkdir="nocorrect mkdir -vp"
-
-		alias chmod="chmod -v"
-		alias chown="chown -v"
+		alias mv="nocorrect mv -i"
+		alias cp="nocorrect cp -i"
+		alias mkdir="nocorrect mkdir"
 		
 		# Git once
 		alias g='git'
@@ -114,11 +132,6 @@
 		alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
 		alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" --restrict-filenames'
 		alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
-	# -^-
-	# Default sudo commands -v-
-		for cmd in mount ifconfig chmod chown rc.d apt-get emerge rc-update; do
-			alias $cmd="+ $cmd"
-		done
 	# -^-
 # -^-
 # Completion -v-

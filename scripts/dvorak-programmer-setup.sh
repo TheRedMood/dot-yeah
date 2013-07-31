@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 wget http://www.kaufmann.no/downloads/linux/kbddvp-1_2_1-src-linux.tgz
 DVP_DIR=$(mktemp -t -d kbddvp.XXXXXX)
 cat kbddvp-1_2_1-src-linux.tgz | gzip -d | tar xf - -C $DVP_DIR
