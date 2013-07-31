@@ -111,7 +111,7 @@
 
 		# Fancy ones <3
 		alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-		alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi"
+		alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
 		alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" --restrict-filenames'
 		alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 	# -^-

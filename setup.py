@@ -60,6 +60,8 @@ fonts   = Dotfile("fonts"   , "{0}/fonts".format(DOTDIR)   , "{0}/.fonts".format
 # Here we have the cases where theres extra checking to be done
 zshgit  = Dotfile("zsh-git"  , "{0}/zsh/git.zsh".format(DOTDIR)  , "{0}/.zsh/git.zsh".format(HOME)  , False , "{0}/.zsh".format(HOME))
 zshkeys = Dotfile("zsh-keys" , "{0}/zsh/keys.zsh".format(DOTDIR) , "{0}/.zsh/keys.zsh".format(HOME) , False , "{0}/.zsh".format(HOME))
+irssitheme  = Dotfile("irssi-theme" , "{0}/irssi/simple.theme".format(DOTDIR) , "{0}/.irssi/simple.theme".format(HOME), False,"{0}/.irssi".format(HOME))
+irssiscripts   = Dotfile("irssi-scripts"   , "{0}/irssi/scripts".format(DOTDIR)   , "{0}/.irssi/scripts".format(HOME), True, "{0}/.irssi".format(HOME))
 
 # We need to use all the elements up there
 for dotfile in dotfiles:
