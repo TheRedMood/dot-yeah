@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
-xrdb ~/.Xresources
-xrdb -override ~/.dot-yeah/colors/Xresources-bright
+#!/bin/sh
+/usr/bin/env xrdb "${HOME}/.Xresources"
+/usr/bin/env xrdb -override "${HOME}/.dot-yeah/colors/Xresources-$1"

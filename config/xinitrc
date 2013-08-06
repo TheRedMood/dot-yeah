@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Doing the color stuff
 xrdb ~/.Xresources
-xrdb -override ~/.dot-yeah/colors/Xresources-bright
+xrdb -override ~/.dot-yeah/colors/Xresources-brown
 
 nitrogen --restore &
 #mpd &
@@ -11,17 +11,12 @@ nitrogen --restore &
 xset +fp /usr/share/fonts/local
 xset fp rehash
 
+# Fixing pointer
+xsetroot -cursor_name left_ptr
+
 setxkbmap -option ctrl:nocaps -layout no
 
 # My beloved urxvtd
-urxvtd --quite --opendisplay --fork
+urxvtd --quiet --opendisplay --fork
 
-#xbindkeys
-#sxhkd & 
-#exec spectrwm
-#exec openbox-session
-#exec i3
-#exec dwm
-#exec wmfs
-#exec monsterwm
 exec xmonad

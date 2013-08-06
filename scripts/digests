@@ -1,0 +1,26 @@
+#!/bin/sh
+# Written by Teodor Spæren (TheRedMood) <teodor_spaeren@riseup.net>
+
+# Little script for calculating different digests of a file.
+# requires openssl, sed
+
+tmpfile=$(mktemp) 
+
+if [ ! -r "$tmpfile" -o ! -w "$tmpfile" ]; then
+    echo "Couldn't create temporary file."
+    exit 1
+fi
+
+printf "CIPHER FILE DIGEST\n" > "$tmpfile"
+
+if [ -n "$1" ]; then 
+    for cipher in MD4 MD5 SHA SHA1 SHA224 SHA256 SHA384 SHA512; do 
+        openssl $cipher $1 >> "$tmpfile"
+    done 
+else 
+    for cipher in MD4 MD5 SHA SHA1 SHA224 SHA256 SHA384 SHA512; do 
+        printf '%s%s\n' "$cipher" "$(openssl $cipher $1)" >> "$tmpfile"
+    done 
+fi 
+cat $tmpfile | sed -e 's/(/ /' -e 's/)=/ /' | column -t 
+rm -f $tmpfile

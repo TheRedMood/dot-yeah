@@ -1,0 +1,17 @@
+#!/bin/sh
+# Written by Teodor Spæren (TheRedMood) <teodor_spaeren@riseup.net>
+
+# Color version of digests
+
+tmpfile=$(mktemp)
+
+if [ ! -r "$tmpfile" -o ! -w "$tmpfile" ]; then
+    echo "Couldn't create temporary file."; exit 1
+fi
+
+for cipher in MD4 MD5 SHA SHA1 SHA224 SHA256 SHA384 SHA512; do
+    printf '\e[31m%s\e[m %s\n' $cipher $(openssl $cipher $1 | sed 's/.*=//') >> "$tmpfile"
+done
+
+cat $tmpfile | column -t
+rm -f $tmpfile

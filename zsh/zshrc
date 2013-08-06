@@ -40,13 +40,14 @@
 		# Perl
 		eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 		export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.dot-yeah/scripts:$PATH"
+#		export MANPATH += "$HOME/.cabal/share/man:$MANPATH"
 	# -^-
 	# Git prompt -v-
 		# git theming default: Variables for theming the git info prompt
 		ZSH_THEME_GIT_PROMPT_PREFIX="|%F{yellow}%B" # Prefix at the very beginning of the prompt, before the branch name
 		ZSH_THEME_GIT_PROMPT_SUFFIX="%b%f"             # At the very end of the prompt
 		ZSH_THEME_GIT_PROMPT_DIRTY="*"					# Text to display if the branch is dirty
-		ZSH_THEME_GIT_PROMPT_CLEAN=""					# Text to display if the branch is clean	
+		ZSH_THEME_GIT_PROMPT_CLEAN=""					# Text to display if the branch is clean
 	# -^-
 # -^-
 # Load plugins -v-
@@ -108,7 +109,7 @@
 		alias sudo="sudo -E"
 		alias -- +="sudo"
 		alias sus="+ -s"
-		
+
 		alias ls="colorls -G"
 		alias grep="grep"
 		alias sshfs="sshfs -o reconnect,nosuid,nodev,allow_other,uid=1000,gid=100"
@@ -118,25 +119,33 @@
 		alias mv="nocorrect mv -i"
 		alias cp="nocorrect cp -i"
 		alias mkdir="nocorrect mkdir"
-		
-		# Git once
+
+		# Git
 		alias g='git'
 		alias gst='git status'
 		alias ga='git add'
-		alias gr='git rm'	
+		alias gr='git rm'
 		alias gl='git log'
 		alias gc='git commit'
 
+		# Ncmpcpp
+		alias mup="ncmpcpp prev"
+		alias mun="ncmpcpp next"
+		alias mut="ncmpcpp toggle"
+
 		# Fancy ones <3
 		alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-		alias dvp="setxkbmap -layout us -variant dvp -option compose:102 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
+		alias dvp="setxkbmap -layout us -variant dvp -option compose:129 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
 		alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" --restrict-filenames'
 		alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+
+		# Haskell
+		alias buildcabal='cabal build --ghc-options="-O0 -c" && cabal build --ghc-options="-O0 -optl -O0 -optl --reduce-memory-overheads -optl --hash-size=3"'
 	# -^-
 # -^-
 # Completion -v-
 	# For now this is all stolen :c
-	fpath=(~/.zsh/completion $fpath) 
+	fpath=(~/.zsh/completion $fpath)
 	autoload -Uz compinit && compinit
 	# SSH hosts completion -v-
 		[ -f ~/.ssh/config ] && : ${(A)ssh_config_hosts:=${${${${(@M)${(f)"$(<~/.ssh/config)"}:#Host *}#Host }:#*\**}:#*\?*}}

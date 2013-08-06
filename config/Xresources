@@ -4,7 +4,6 @@ Xft.hinting:              full
 Xft.hintstyle:           hintslight
 Xft.rgba:                  rgb
 
-!urxvt.termName:          rxvt-unicode-256color
 urxvt.scrollBar:         false
 urxvt.imLocale:          en_US.UTF-8
 urxvt.saveLines:         512

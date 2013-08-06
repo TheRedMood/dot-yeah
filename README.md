@@ -14,6 +14,8 @@ To fully harness the power of these configuration files you need:
 
 -   zsh - Powerful shell.
 -   rxvt-unicode-256color - Good terminal emulator.
+-   tmux - terminal multiplexer
+
 
 To set up, execute:
 
@@ -22,6 +24,7 @@ $ git clone https://github.com/TheRedMood/dot-yeah.git ~/.dot-yeah
 $ cd ~/.dot-yeah
 $ ./setup.py
 ```
+
 Just follow along the setup script and you are good to go! 
 
 Feedback

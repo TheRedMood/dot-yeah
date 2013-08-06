@@ -82,9 +82,5 @@ os.system("git --git-dir={0}/.git/ submodule init".format(DOTDIR))
 print("Starting git submodule update:")
 os.system("git --git-dir={0}/.git/ submodule update --recursive".format(DOTDIR))
 
-# Getting inxi
-os.system("wget -c smxi.org/inxi -O {0}/scripts/inxi".format(HOME))
-os.system("chmod +x {0}/scripts/inxi".format(HOME))
-
 # Fonts
 os.system("fc-cache -vf")
