@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # Doing the color stuff
+xrandr --output HDMI-0 --auto --primary
+xrandr --output DVI-1 --auto --right-of HDMI-0
+
 xrdb ~/.Xresources
-xrdb -override ~/.dot-yeah/colors/Xresources-brown
+xrdb -override ~/.dot-yeah/colors/Xresources-gjm
 
 nitrogen --restore &
 #mpd &
@@ -19,4 +22,5 @@ setxkbmap -option ctrl:nocaps -layout no
 # My beloved urxvtd
 urxvtd --quiet --opendisplay --fork
 
-exec xmonad
+#exec xmonad
+exec dwm

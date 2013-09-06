@@ -270,3 +270,6 @@ abstracts = {
   sbact_act = "Act: $0-";
   sbact_det = " Det: $0-";
 };
+formats = {
+  "fe-common/core" = { pubmsg = "{pubmsgnick $2 {pubnick \00309$0}}$1"; };
+};

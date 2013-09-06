@@ -8,7 +8,7 @@ urxvt.scrollBar:         false
 urxvt.imLocale:          en_US.UTF-8
 urxvt.saveLines:         512
 !urxvt.geometry:          100x30
-!urxvt.boldMode:          false
+urxvt.boldMode:          false
 urxvt.inheritPixmap:     false
 !urxvt.shading:           40
 !urxvt.xftAntialias:      false
@@ -18,14 +18,17 @@ urxvt.internalBorder:    0
 
 urxvt.font:              xft:terminus:size=10
 urxvt.boldFont:          xft:terminus:size=10
-
+!urxvt.font                xft:Source Code Pro:style=Regular
+!urxvt.boldFont            xft:Source Code Pro:style=Regular
+!urxvt.font:              xft:Inconsolata:style=Medium:size=10
+!urxvt.boldFont:          xft:Inconsolata:style=Medium:size=10
 
 URxvt.colorUL: #4682B4
 
 !-*- Perl extensions -*-
 URxvt.perl-ext-common:default,clipboard,matcher,keyboard-select
 URxvt.keysym.M-u:     perl:url-select:select_next
-URxvt.url-launcher:   /usr/local/bin/firefox
+URxvt.url-launcher:   /usr/bin/firefox
 URxvt.underlineURLs:  True
 URxvt.matcher.button: 1 
 URxvt.keysym.M-Escape:perl:keyboard-select:activate

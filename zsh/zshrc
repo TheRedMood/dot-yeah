@@ -37,7 +37,7 @@
 		export AUTOMAKE_VERSION=1.9
 	# -^-
 	# Paths -v-
-		export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.dot-yeah/scripts:$PATH"
+		export PATH="$HOME/bin:$HOME/.cabal/bin:$HOME/.dot-yeah/scripts:/usr/local/bin:$PATH"
 	# -^-
 	# Git prompt -v-
 		# git theming default: Variables for theming the git info prompt
@@ -45,6 +45,10 @@
 		ZSH_THEME_GIT_PROMPT_SUFFIX="%b%f"             # At the very end of the prompt
 		ZSH_THEME_GIT_PROMPT_DIRTY="*"					# Text to display if the branch is dirty
 		ZSH_THEME_GIT_PROMPT_CLEAN=""					# Text to display if the branch is clean
+	# -^-
+	# Weave.sh -v-
+		export char_v='┃'
+		export char_h='━' 
 	# -^-
 # -^-
 # Load plugins -v-
@@ -138,9 +142,11 @@
 
 		# Fancy ones <3
 		alias lstree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-		alias dvp="setxkbmap -layout us -variant dvp -option compose:129 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
+		alias filetree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+		alias dvp="setxkbmap -layout us -variant dvp -option compose:100 -option keypad:atm -option numpad:shift3 -option kpdl:semi -option ctrl:menu_rctrl -option caps:ctrl_modifier -option ctrl:nocaps"
 		alias youtube-dl='youtube-dl -o "%(title)s.%(ext)s" --restrict-filenames'
 		alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+		alias big='ls -laSh | head'
 
 		# Haskell
 		alias buildcabal='cabal build --ghc-options="-O0 -c" && cabal build --ghc-options="-O0 -optl -O0 -optl --reduce-memory-overheads -optl --hash-size=3"'

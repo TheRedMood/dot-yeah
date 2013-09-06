@@ -43,8 +43,8 @@ then
     bind2maps             vicmd -- Insert vi-insert
     bind2maps emacs             -- Delete delete-char
     bind2maps       viins vicmd -- Delete vi-delete-char
-    bind2maps emacs viins vicmd -- Up     up-line-or-history
-    bind2maps emacs viins vicmd -- Down   down-line-or-history
+    bind2maps emacs viins vicmd -- Up     history-search-backward
+    bind2maps emacs viins vicmd -- Down   history-search-forward
     bind2maps emacs             -- Left   backward-char
     bind2maps       viins vicmd -- Left   vi-backward-char
     bind2maps emacs             -- Right  forward-char
